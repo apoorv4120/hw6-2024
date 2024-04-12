@@ -12,6 +12,7 @@ window.onload = function () {
 	document.querySelector("#play").addEventListener("click", function () {
 		console.log("Play Video");
 		video.play();
+		document.getElementById("volume").innerHTML = video.volume * 100 + "%";
 	});
 	document.querySelector("#pause").addEventListener("click", function () {
 		console.log("Pause Video");
@@ -50,8 +51,9 @@ window.onload = function () {
 		}
 	});
 	document.querySelector("#slider").addEventListener("change", function () {
-		console.log("The current value is " + this.value);
+		console.log("The current value is " + video.volume);
 		video.volume = this.value / 100;
+
 		document.getElementById("volume").innerHTML = this.value + "%";
 		console.log("The current value is " + video.volume);
 	});
